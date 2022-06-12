@@ -1,0 +1,39 @@
+body {
+  padding: 20px 42px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #D42026
+  }
+  &__subtitle, &__name {
+    font-size: 1.5rem;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+    color: #D42026
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  border-spacing: 10px 0px;
+  width: 100%;
+  th {
+    font-size: 1rem;
+    color: white;
+    padding: 10px;
+    background-color: #D42026;
+    text-align: left;
+  }
+}
