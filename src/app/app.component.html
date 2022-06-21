@@ -11,18 +11,34 @@
 <table>
   <thead>
     <tr>
-      <th>Personagem</th>
-      <th>Séries</th>
-      <th>Eventos</th>
+      <th class="table__character priority-1">
+        <div class="character">
+          Personagem
+        </div>
+      </th>
+      <th class="table__series priority-2">
+        <div class="series">
+          Séries
+        </div>
+      </th>
+      <th class="table__events priority-3">
+        <div class="events">
+          Eventos
+        </div>
+      </th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let personagem of personagens">
-      <td>
-        <img src="{{personagem.imagem}}" alt="">       
+    <tr *ngFor="let character of characters">
+      <td class="priority-1">
+        <div style="display:flex; align-items: center">
+          <img style="margin-right: 25px;" src="{{character.image}}" alt="">       
+          <span>{{character.name}}</span>
+        </div>
+
       </td>
-      <td>{{personagem.nome}}</td>
-      <td>{{personagem.nome}}</td>
+      <td class="priority-2">{{character.series}}</td>
+      <td class="priority-3">{{character.events}}</td>
     </tr>
   </tbody>
 </table>

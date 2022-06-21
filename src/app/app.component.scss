@@ -1,5 +1,7 @@
 body {
   padding: 20px 42px;
+  font-family: 'Roboto', sans-serif;
+
 }
 .header {
   display: flex;
@@ -22,18 +24,50 @@ body {
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
 table {
-  border-spacing: 10px 0px;
+  border-collapse: collapse;
   width: 100%;
-  th {
-    font-size: 1rem;
-    color: white;
-    padding: 10px;
-    background-color: #D42026;
+  thead {
+    color: #eee;
+    tr {
+      border-bottom: none;
+    }
+  }
+  tr{
+    border-bottom: 1px solid #D42026;
+  }
+
+  td {
+    padding: 20px;
     text-align: left;
+    img {
+      width: 58px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+    }
+  }
+
+  .table__character, .table__series {
+    width: 25%;
+  }
+
+  .character, .series, .events {
+    background-color: #D42026;
+    padding: 10px;
+  }
+
+
+}
+
+@media screen and (max-width: 720px) {
+  .priority-2, .priority-3 {
+    display:none;
+  }
+  .header__name {
+    visibility: hidden;
   }
 }
