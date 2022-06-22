@@ -1,0 +1,31 @@
+<table>
+    <thead>
+      <tr>
+        <th class="table__character priority-1">
+          <div class="character">Personagem</div>
+        </th>
+        <th class="table__series priority-2">
+          <div class="series">Séries</div>
+        </th>
+        <th class="table__events priority-3">
+          <div class="events">Eventos</div>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let character of characters">
+        <td class="priority-1">
+          <div style="display: flex; align-items: center">
+            <img
+              style="margin-right: 25px"
+              src="{{ character.image }}"
+              alt=""
+            />
+            <span>{{ character.name }}</span>
+          </div>
+        </td>
+        <td class="priority-2">{{ character.series.slice(0, 3) }}</td>
+        <td class="priority-2">{{ character.events.slice(0, 3) }}</td>
+      </tr>
+    </tbody>
+  </table>

@@ -19,6 +19,7 @@ export class AppComponent {
   ngOnInit() {
     this.marvelService.getCharacters(this.page).subscribe((characters: any) => this.characters = characters);
   }
+  
   previousPage() {
     if (this.page > 0) {
       this.page--;

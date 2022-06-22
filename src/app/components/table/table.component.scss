@@ -1,0 +1,34 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    thead {
+      color: #eee;
+      tr {
+        border-bottom: none;
+      }
+    }
+    tr{
+      border-bottom: 1px solid #D42026;
+    }
+  
+    td {
+      padding: 20px;
+      text-align: left;
+      img {
+        width: 58px;
+        aspect-ratio: 1;
+        border-radius: 50%;
+      }
+    }
+  
+    .table__character, .table__series {
+      width: 25%;
+    }
+  
+    .character, .series, .events {
+      background-color: #D42026;
+      padding: 10px;
+    }
+  
+  
+  }
