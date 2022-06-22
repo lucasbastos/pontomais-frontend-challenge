@@ -11,16 +11,20 @@ export class MarvelService {
   private readonly PUBLIC_KEY = '2831b8ca76ecea71473b1a712589b8eb';
   private readonly PRIVATE_KEY = '26057e0d29c4a6b6848b74438e8a6cf4a3cec21a';
 
-  constructor(private http: HttpClient) {}
+  private readonly LIMIT = 10;
 
-  getCharacters() {
+  constructor(private http: HttpClient) {
+  }
+
+  getCharacters(page: number) {
     const md5 = new Md5();
     const ts = Date.now();
 
     return this.http
       .get(
         this.baseUrl +
-          'ts=' +
+        'limit=10'+ '&offset=' +  + page*10 +
+          '&ts=' +
           ts +
           '&apikey=' +
           this.PUBLIC_KEY +

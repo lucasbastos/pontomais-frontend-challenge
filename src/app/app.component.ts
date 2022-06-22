@@ -10,12 +10,30 @@ import { Character } from './models/character.model';
 export class AppComponent {
   title = 'pontomais-frontend-challenge';
   characters: Character[] = [];
+  page = 0;
 
   constructor(private marvelService: MarvelService) {
 
   }
 
   ngOnInit() {
-    this.marvelService.getCharacters().subscribe((characters: any) => this.characters = characters);
-}
+    this.marvelService.getCharacters(this.page).subscribe((characters: any) => this.characters = characters);
+  }
+  previousPage() {
+    if (this.page > 0) {
+      this.page--;
+      this.marvelService.getCharacters(this.page).subscribe((characters: any) => this.characters = characters);
+    }
+  }
+
+  nextPage() {
+    this.page++;
+    console.log('next page', this.page);
+    this.marvelService.getCharacters(this.page).subscribe((characters: any) => this.characters = characters);
+  }
+
+  pagination(page: number) {
+    this.page = page;
+    this.marvelService.getCharacters(this.page).subscribe((characters: any) => this.characters = characters);
+  }
 }
